@@ -214,7 +214,16 @@ function buttonclick(){
   data_line =[quarter_select,down_select,defenders_select,
   passrushers_select,playdirection_select,route_select,offense_select,dropback_select];
   console.log(data_line);
-};
+  // var user_select = `${quarter_select}/${down_select}/${defenders_select}/${passrushers_select}/${playdirection_select}/${route_select}/${offense_select}/${dropback_select}`
+  // var url = `url/${user_select}`
+  // d3.json(url).then(function(predict) {
+  //   if (predict[0] == 0);
+  //     prediction = "Catch"
+  //   if (predict[0] == 1);
+  //     prediction = "No catch"
+  //   if (predict[0] == 2);
+  //     prediction = "Interception"});
+  //   console.log(prediction);
 d3.selectAll("#filter-btn").on("click", buttonclick);
 
 function init() {
