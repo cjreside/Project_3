@@ -7,92 +7,89 @@ var route_select = "";
 var offense_select = "";
 var dropback_select = "";
 
-    var quarter = {
-      "1": 1,
-      "2": 2,
-      "3": 3,
-      "4": 4 };
-      
+// Set keys/values for sel_quarter dropdown
+var quarter = {
+  "1": 1,
+  "2": 2,
+  "3": 3,
+  "4": 4
+};
 
-    var down = {
-        "1": 1,
-        "2": 2,
-        "3": 3,
-        "4": 4
-    };
+// Set keys/values for sel_down dropdown
+var down = {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "4": 4
+};
 
-    var defendersInTheBox = {
-        "3": 0,
-        "4": 1,
-        "5": 2,
-        "6": 3,
-        "7": 4, 
-        "8": 5, 
-        "9": 6, 
-        "10": 7
-    };
+// Set keys/values for sel_defenders dropdown
+var defendersInTheBox = {
+    "3": 0,
+    "4": 1,
+    "5": 2,
+    "6": 3,
+    "7": 4, 
+    "8": 5, 
+    "9": 6, 
+    "10": 7
+};
 
-    var numberOfPassRushers = {
-        "2": 0,
-        "3": 1,
-        "4": 2,
-        "5": 3,
-        "6": 4, 
-        "7": 5, 
-        "8": 6
-        };
+// Set keys/values for sel_passrushers dropdown
+var numberOfPassRushers = {
+    "2": 0,
+    "3": 1,
+    "4": 2,
+    "5": 3,
+    "6": 4, 
+    "7": 5, 
+    "8": 6
+};
 
-    var playDirection = {
-        "Left": 0,
-        "Right": 1
-    };
+// Set keys/values for sel_playdirection dropdown
+var playDirection = {
+    "Left": 0,
+    "Right": 1
+};
 
-    var route = {
-        "Angle": 0,
-        "Corner": 1,
-        "Cross": 2,
-        "Flat": 3,
-        "Go": 4, 
-        "Hitch": 5, 
-        "In": 6,
-        "Out": 7,
-        "Post": 8, 
-        "Screen": 9, 
-        "Slant": 10,
-        "Wheel": 11,
-        "Undefined": 12
-    };
+// Set keys/values for sel_route dropdown
+var route = {
+    "Angle": 0,
+    "Corner": 1,
+    "Cross": 2,
+    "Flat": 3,
+    "Go": 4, 
+    "Hitch": 5, 
+    "In": 6,
+    "Out": 7,
+    "Post": 8, 
+    "Screen": 9, 
+    "Slant": 10,
+    "Wheel": 11,
+    "Undefined": 12
+};
 
-    var offenseFormation = {
-        "Designed Roll Out Left": 0,
-        "Designed Roll Out Right": 1,
-        "Scramble": 2,
-        "Scramble Roll Out Left": 3,
-        "Scramble Roll Out Right": 4, 
-        "Traditional": 5
-    };
+// Set keys/values for sel_offense dropdown
+var offenseFormation = {
+    "Designed Roll Out Left": 0,
+    "Designed Roll Out Right": 1,
+    "Scramble": 2,
+    "Scramble Roll Out Left": 3,
+    "Scramble Roll Out Right": 4, 
+    "Traditional": 5
+};
 
+// Set keys/values for sel_dropback dropdown
+var typeDropback = {
+    "Empty": 0,
+    "I Form": 1,
+    "Jumbo": 2,
+    "Pistol": 3,
+    "Shotgun": 4, 
+    "Single Back": 5
+};
 
-    var typeDropback = {
-        "Empty": 0,
-        "I Form": 1,
-        "Jumbo": 2,
-        "Pistol": 3,
-        "Shotgun": 4, 
-        "Single Back": 5
-    };
-
-
-
-//var selectKeys = Object.keys(data[0])
-//selectKeys.forEach(e => {
-  
-  //d3.select('#options-container').append('div').attr('class','dropdown-container').append('select').attr('id',e)
-  //for (const entry in data[0][e]) {
-  //  console.log(entry)
- // }
-//})
-
+// Populate the sel_quarter dropdown
 function quarter_dropdown(){    
   // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
@@ -103,14 +100,15 @@ function quarter_dropdown(){
   };
 
 };    
+
+// When the quarter is selected (key), save the associated value
 function quarter_value(ele) {  
   var selected = ele.value;
   quarter_select = quarter[selected];
- // console.log(quarter_select)
 };
 
+// Populate the sel_down dropdown
 function down_dropdown(){    
-  // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
   var ele = document.getElementById('sel_down');
   var downchoice = Object.keys(down)
@@ -119,12 +117,14 @@ function down_dropdown(){
   };
 
 };    
+
+// When the down is selected (key), save the associated value
 function down_value(ele) {  
   var selected = ele.value;
   down_select = down[selected]};
-  
+
+// Populate the sel_defenders dropdown
 function defenders_dropdown(){    
-  // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
   var ele = document.getElementById('sel_defenders');
   var defenderschoice = Object.keys(defendersInTheBox)
@@ -132,13 +132,16 @@ function defenders_dropdown(){
       ele.innerHTML = ele.innerHTML + '<option value="' + defenderschoice[i] + '">' + defenderschoice[i] + '</option>';
   };
 
-};    
+}; 
+
+// When the number of defenders in the box is selected (key), save the associated value
 function defenders_value(ele) {  
   var selected = ele.value;
   defenders_select = defendersInTheBox[selected]
 };
+
+// Populate the sel_passrushers dropdown
 function passrushers_dropdown(){    
-  // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
   var ele = document.getElementById('sel_passrushers');
   var passrusherschoice = Object.keys(numberOfPassRushers)
@@ -147,12 +150,15 @@ function passrushers_dropdown(){
   };
 
 };    
+
+// When the number of pass rushers is selected (key), save the associated value
 function passrushers_value(ele) {  
   var selected = ele.value;
   passrushers_select = numberOfPassRushers[selected]
 };
+
+// Populate the sel_playdirection dropdown
 function playdirection_dropdown(){    
-  // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
   var ele = document.getElementById('sel_playdirection');
   var playdirectionchoice = Object.keys(playDirection)
@@ -161,13 +167,15 @@ function playdirection_dropdown(){
   };
 
 };    
+
+// When a play direction is selected (key), save the associated value
 function playdirection_value(ele) {  
   var selected = ele.value;
   playdirection_select = playDirection[selected]
 };
 
+// Populate the sel_route dropdown
 function route_dropdown(){    
-  // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
   var ele = document.getElementById('sel_route');
   var routechoice = Object.keys(route)
@@ -176,12 +184,15 @@ function route_dropdown(){
   };
 
 };    
+
+// When a route is selected (key), save the associated value
 function route_value(ele) {  
   var selected = ele.value;
   route_select = route[selected]
 };
+
+// Populate the sel_offense dropdown
 function offense_dropdown(){    
-  // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
   var ele = document.getElementById('sel_offense');
   var offensechoice = Object.keys(offenseFormation)
@@ -190,12 +201,15 @@ function offense_dropdown(){
   };
 
 };    
+
+// When offesive formation is selected (key), save the associated value
 function offense_value(ele) {  
   var selected = ele.value;
   offense_select = offenseFormation[selected]
 };
+
+// Populate the sel_dropback dropdown
 function dropback_dropdown(){    
-  // Populate the dropdown
   // Adapted from: https://www.encodedna.com/javascript/populate-select-dropdown-list-with-json-data-using-javascript.htm
   var ele = document.getElementById('sel_dropback');
   var dropbackchoice = Object.keys(typeDropback)
@@ -204,32 +218,47 @@ function dropback_dropdown(){
   };
 
 };    
+
+// When dropback is selected (key), save the associated value
 function dropback_value(ele) {  
   var selected = ele.value;
   dropback_select = typeDropback[selected]
 };
+
+// Runs when the filter-btn is clicked
 function buttonclick(){
   d3.event.preventDefault();
-  //create variables using the user input from the filtered data
-  data_line =[quarter_select,down_select,defenders_select,
-  passrushers_select,playdirection_select,route_select,offense_select,dropback_select];
-  console.log(data_line);
-  // var user_select = `${quarter_select}/${down_select}/${defenders_select}/${passrushers_select}/${playdirection_select}/${route_select}/${offense_select}/${dropback_select}`
-  // var url = `url/${user_select}`
-  // d3.json(url).then(function(predict) {
-  //   if (predict[0] == 0);
-  //     prediction = "Catch"
-  //   if (predict[0] == 1);
-  //     prediction = "No catch"
-  //   if (predict[0] == 2);
-  //     prediction = "Interception"});
-  //   console.log(prediction);
+  
+  // This builds part of the URL to pass selections to Flask
+  sender = `${quarter_select}/${down_select}/${defenders_select}/${passrushers_select}/${playdirection_select}/${route_select}/${offense_select}/${dropback_select}`
+  
+  // Build the complete URL
+  var url = "/predict/" + sender;  
+  
+  // GET request -> Flask with the parameters passed and send it
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, false);
+  xhr.send();
+  
+  // Get the results from the ML prediciton
+  // Value is 0,1, or 2
+  // 0 = Pass complete
+  // 1 = Pass incomplete
+  // 2 = Pass intercepted
+  var retrievedtext = xhr.responseText; //This will be returned by Flask
+  
+  console.log(retrievedtext);
+
+};
+
+// If the user clicks the RUN MODEL button, call buttonclick
 d3.selectAll("#filter-btn").on("click", buttonclick);
 
+// Initialization 
 function init() {
-  // Grab a reference to the dropdown select element
-  var selector = d3.select("#selDataset");
-  quarter_dropdown()  ;
+  
+  // Build out the dropdown values  
+  quarter_dropdown();
   down_dropdown();
   defenders_dropdown();
   passrushers_dropdown();
@@ -237,7 +266,7 @@ function init() {
   route_dropdown();
   offense_dropdown();
   dropback_dropdown();
-}
+};
 
 // Initialize the dashboard
 init();
