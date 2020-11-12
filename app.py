@@ -4,12 +4,15 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from tensorflow.keras.models import load_model
+from tensorflow import keras
 
 # Instantiate flask 
 app = Flask(__name__)
 
 # Load the saved model
-russell_loaded_model = load_model('russell_deep_trained_790.h5')
+#russell_loaded_model = load_model('russell_deep_trained_790.h5')
+russell_loaded_model = load_model('russell_deep_trained.h5')
+
 
 #########
 # 

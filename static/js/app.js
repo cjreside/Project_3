@@ -236,20 +236,30 @@ function buttonclick(){
   var url = "/predict/" + sender;  
   
   // GET request -> Flask with the parameters passed and send it
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', url, false);
-  xhr.send();
+  // var xhr = new XMLHttpRequest();
+  // xhr.open('GET', url, false);
+  // xhr.send();
   
   // Get the results from the ML prediciton
   // Value is 0,1, or 2
   // 0 = Pass complete
   // 1 = Pass incomplete
   // 2 = Pass intercepted
-  var retrievedtext = xhr.responseText; //This will be returned by Flask
-  
+  var retrievedtext = 1 // xhr.responseText; //This will be returned by Flask
+    if (retrievedtext == 0){
+      document.getElementById("img").src = "../videos/Russell_carlton.gif"
+    }else if(retrievedtext == 1){
+      document.getElementById("img").src = "../videos/Russell_disappointed.gif"
+    }else if(retrievedtext == 2){
+      document.getElementById("img").src = "../videos/sad_russell.gif"
+    }else {
+      document.getElementById("img").src = "../videos/Russell_eating_gif.gif"
+    }
+
   console.log(retrievedtext);
 
 };
+
 
 // If the user clicks the RUN MODEL button, call buttonclick
 d3.selectAll("#filter-btn").on("click", buttonclick);
@@ -266,6 +276,7 @@ function init() {
   route_dropdown();
   offense_dropdown();
   dropback_dropdown();
+  document.getElementById("img").src = "../videos/Russell_eating_gif.gif"
 };
 
 // Initialize the dashboard
