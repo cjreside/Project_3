@@ -247,13 +247,13 @@ function buttonclick(){
   // 2 = Pass intercepted
   var retrievedtext = 1 // xhr.responseText; //This will be returned by Flask
     if (retrievedtext == 0){
-      document.getElementById("img").src = "../videos/Russell_carlton.gif"
+      document.getElementById("img").src = "./videos/Russell_carlton.gif"
     }else if(retrievedtext == 1){
-      document.getElementById("img").src = "../videos/Russell_disappointed.gif"
+      document.getElementById("img").src = "./videos/Russell_disappointed.gif"
     }else if(retrievedtext == 2){
-      document.getElementById("img").src = "../videos/sad_russell.gif"
+      document.getElementById("img").src = "./videos/sad_russell.gif"
     }else {
-      document.getElementById("img").src = "../videos/Russell_eating_gif.gif"
+      document.getElementById("img").src = "./videos/Russell_eating_gif.gif"
     }
 
   console.log(retrievedtext);
@@ -263,6 +263,34 @@ function buttonclick(){
 
 // If the user clicks the RUN MODEL button, call buttonclick
 d3.selectAll("#filter-btn").on("click", buttonclick);
+
+
+
+
+// Runs when the filter-btn is clicked
+function randomButton(){
+  d3.event.preventDefault();
+  var quarterchoice = Object.keys(quarter);
+  var minNumber = 0;
+  var maxNumber = quarterchoice.length;
+  $("#randomize").click(function(){
+      $("#sel_quarter")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
+  //$("#s1")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
+  });
+  function randomNumberFromRange(min,max)
+  {
+      return  Math.floor(Math.random()*(max-min+1)+min);
+  }
+  $("#sel_quarter")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
+  //$("#s1")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
+  random = `${quarter_select}/${down_select}/${defenders_select}/${passrushers_select}/${playdirection_select}/${route_select}/${offense_select}/${dropback_select}`
+  console.log(random);
+
+};
+// If the user clicks the RUN MODEL button, call buttonclick
+d3.selectAll("#random-btn").on("click", randomButton);
+
+
 
 // Initialization 
 function init() {
@@ -276,7 +304,7 @@ function init() {
   route_dropdown();
   offense_dropdown();
   dropback_dropdown();
-  document.getElementById("img").src = "../videos/Russell_eating_gif.gif"
+  document.getElementById("img").src = "../videos/Comin_for_the_win_russell.gif"
 };
 
 // Initialize the dashboard
