@@ -304,7 +304,7 @@ function init() {
   route_dropdown();
   offense_dropdown();
   dropback_dropdown();
-  document.getElementById("img").src = "../videos/Comin_for_the_win_russell.gif"
+  document.getElementById("img").src = "./videos/Comin_for_the_win_russell.gif"
 };
 
 // Initialize the dashboard
