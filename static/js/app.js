@@ -189,6 +189,7 @@ function route_dropdown(){
 function route_value(ele) {  
   var selected = ele.value;
   route_select = route[selected]
+  console.log(selected)
 };
 
 // Populate the sel_offense dropdown
@@ -271,20 +272,75 @@ d3.selectAll("#filter-btn").on("click", buttonclick);
 function randomButton(){
   d3.event.preventDefault();
   var quarterchoice = Object.keys(quarter);
-  var minNumber = 0;
-  var maxNumber = quarterchoice.length;
-  $("#randomize").click(function(){
-      $("#sel_quarter")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
-  //$("#s1")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
-  });
-  function randomNumberFromRange(min,max)
-  {
-      return  Math.floor(Math.random()*(max-min+1)+min);
+  var downchoice = Object.keys(down);
+  var defenderschoice = Object.keys(defendersInTheBox);
+  var passrusherschoice = Object.keys(numberOfPassRushers);
+  var playdirectionchoice = Object.keys(playDirection);
+  var routechoice = Object.keys(route);
+  var offensechoice = Object.keys(offenseFormation);
+  var dropbackchoice = Object.keys(typeDropback);
+
+  var minNumber = 1;
+  var maxquarter = quarterchoice.length;
+  var maxdown = downchoice.length;
+  var maxdefenders = defenderschoice.length; 
+  var maxpassrushers = passrusherschoice.length;
+  var maxdirection = playdirectionchoice.length;
+  var maxroute = routechoice.length;
+  var maxoffense = offensechoice.length;
+  var maxdropback = dropbackchoice.length;
+
+
+  function randomNumberFromRange(min,max){
+          return  Math.floor(Math.random()*(max-min+1)+min);
   }
-  $("#sel_quarter")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
+   var quarternumber = randomNumberFromRange(minNumber, maxquarter)
+   var downnumber = randomNumberFromRange(minNumber, maxdown)
+   var defendernumber = randomNumberFromRange(minNumber, maxdefenders)
+   var passrushernumber = randomNumberFromRange(minNumber, maxpassrushers)
+   var playdirectionnumber = randomNumberFromRange(minNumber, maxdirection)
+   var routenumber = randomNumberFromRange(minNumber, maxroute)
+   var offensenumber = randomNumberFromRange(minNumber, maxoffense)
+   var dropbacknumber = randomNumberFromRange(minNumber, maxdropback)
+  $("#sel_quarter")[0].selectedIndex = [quarternumber.toString()];
+  $("#sel_down")[0].selectedIndex = [downnumber.toString()];
+  $("#sel_defenders")[0].selectedIndex = [defendernumber.toString()];
+  $("#sel_passrushers")[0].selectedIndex = [passrushernumber.toString()];
+  $("#sel_playdirection")[0].selectedIndex = [playdirectionnumber.toString()];
+  $("#sel_route")[0].selectedIndex = [routenumber.toString()];
+  $("#sel_offense")[0].selectedIndex =[offensenumber.toString()];
+  $("#sel_dropback")[0].selectedIndex = [dropbacknumber.toString()];
   //$("#s1")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
-  random = `${quarter_select}/${down_select}/${defenders_select}/${passrushers_select}/${playdirection_select}/${route_select}/${offense_select}/${dropback_select}`
-  console.log(random);
+
+   random = `${quarternumber}/${downnumber}/${defendernumber - 1}/${passrushernumber-1}/${playdirectionnumber-1}/${routenumber-1}/${offensenumber-1}/${dropbacknumber-1}`
+   console.log(random);
+ 
+  // Build the complete URL
+  var url = "/predict/" + random;  
+  console.log(url)
+
+  // GET request -> Flask with the parameters passed and send it
+  // var xhr = new XMLHttpRequest();
+  // xhr.open('GET', url, false);
+  // xhr.send();
+  
+  // Get the results from the ML prediciton
+  // Value is 0,1, or 2
+  // 0 = Pass complete
+  // 1 = Pass incomplete
+  // 2 = Pass intercepted
+  var retrievedtext = 2// xhr.responseText; //This will be returned by Flask
+    if (retrievedtext == 0){
+      document.getElementById("img").src = "./videos/Russell_carlton.gif"
+    }else if(retrievedtext == 1){
+      document.getElementById("img").src = "./videos/Russell_disappointed.gif"
+    }else if(retrievedtext == 2){
+      document.getElementById("img").src = "./videos/sad_russell.gif"
+    }else {
+      document.getElementById("img").src = "./videos/Russell_eating_gif.gif"
+    }
+
+  console.log(retrievedtext);
 
 };
 // If the user clicks the RUN MODEL button, call buttonclick
