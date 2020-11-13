@@ -268,9 +268,10 @@ d3.selectAll("#filter-btn").on("click", buttonclick);
 
 
 
-// Runs when the filter-btn is clicked
+// Runs when the random-btn is clicked
 function randomButton(){
   d3.event.preventDefault();
+  // Pulls the keys from the dictionary 
   var quarterchoice = Object.keys(quarter);
   var downchoice = Object.keys(down);
   var defenderschoice = Object.keys(defendersInTheBox);
@@ -279,7 +280,8 @@ function randomButton(){
   var routechoice = Object.keys(route);
   var offensechoice = Object.keys(offenseFormation);
   var dropbackchoice = Object.keys(typeDropback);
-
+  // measures the length of keys 
+  //set min Number to 1 in order to eliminate the chance that the "set the ______" is chosen
   var minNumber = 1;
   var maxquarter = quarterchoice.length;
   var maxdown = downchoice.length;
@@ -290,10 +292,11 @@ function randomButton(){
   var maxoffense = offensechoice.length;
   var maxdropback = dropbackchoice.length;
 
-
+// create a function that randomizes the numbers based on minimum numbers and maximum length 
   function randomNumberFromRange(min,max){
           return  Math.floor(Math.random()*(max-min+1)+min);
   }
+// for each variable, run the random number generator function to select one of the options 
    var quarternumber = randomNumberFromRange(minNumber, maxquarter)
    var downnumber = randomNumberFromRange(minNumber, maxdown)
    var defendernumber = randomNumberFromRange(minNumber, maxdefenders)
@@ -302,6 +305,8 @@ function randomButton(){
    var routenumber = randomNumberFromRange(minNumber, maxroute)
    var offensenumber = randomNumberFromRange(minNumber, maxoffense)
    var dropbacknumber = randomNumberFromRange(minNumber, maxdropback)
+
+  // pass the information to a string so the correct data displays in the actual dropdown on the website for the user to see
   $("#sel_quarter")[0].selectedIndex = [quarternumber.toString()];
   $("#sel_down")[0].selectedIndex = [downnumber.toString()];
   $("#sel_defenders")[0].selectedIndex = [defendernumber.toString()];
@@ -310,14 +315,13 @@ function randomButton(){
   $("#sel_route")[0].selectedIndex = [routenumber.toString()];
   $("#sel_offense")[0].selectedIndex =[offensenumber.toString()];
   $("#sel_dropback")[0].selectedIndex = [dropbacknumber.toString()];
-  //$("#s1")[0].selectedIndex = randomNumberFromRange(minNumber, maxNumber);
-
+  
+  // This builds part of the URL to pass selections to Flask - subtract 1 for the last 6 buckets because their one hot encode starts with 0 but min number is 1 because of the 
+  //index of the dropdown
    random = `${quarternumber}/${downnumber}/${defendernumber - 1}/${passrushernumber-1}/${playdirectionnumber-1}/${routenumber-1}/${offensenumber-1}/${dropbacknumber-1}`
-   console.log(random);
  
   // Build the complete URL
   var url = "/predict/" + random;  
-  console.log(url)
 
   // GET request -> Flask with the parameters passed and send it
   // var xhr = new XMLHttpRequest();
