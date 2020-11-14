@@ -77,3 +77,15 @@ russell_deep_trained_790.h5
 heroku_files:
   
     All of the same files, but rebuilt to Heroku's app standards
+
+## Technologies used:
+    python
+      pandas
+      spark
+      numpy
+      flask
+      tensorflow
+    javascript
+      d3
+    html
+    css
