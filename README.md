@@ -1,7 +1,15 @@
-# Project_3
-Description
+# What Should Russell Wilson Do?
+For our final project, we built an interactive ML dashboard that used in 2018 NFL data and predicts how a Russell Wilson passing play could turn out based on 8 criteria. The possible results are: completion, incompletion, and interception.
 
-# See it live:
+## Team members:
+
+Alyssa Pech, Colby Hoke, Connor Reside, 
+
+## Data source:
+
+https://www.kaggle.com/c/nfl-big-data-bowl-2021/data
+
+## See it live:
 
 https://russell-wilson-predictor.herokuapp.com/
 
