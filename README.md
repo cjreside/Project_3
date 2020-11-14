@@ -1,12 +1,15 @@
 # Project_3
-Project_3
+Description
 
-Data cleaning notebook:
-https://colab.research.google.com/drive/1iPqv48xJ45dbr3chT95bxT9c5LZJkEz2?usp=sharing
 
-ML notebook:
-https://colab.research.google.com/drive/1mBA_vjN-HK3LD_jCPpkZSNtYUCI-vXJ4#scrollTo=rJ__YTNwtn9F
+## Additional files:
+* Data cleaning notebook:
+  https://colab.research.google.com/drive/1iPqv48xJ45dbr3chT95bxT9c5LZJkEz2?usp=sharing
 
+* ML notebook:
+  https://colab.research.google.com/drive/1mBA_vjN-HK3LD_jCPpkZSNtYUCI-vXJ4#scrollTo=rJ__YTNwtn9F
+
+## Files in this repository:
 static folder:
   js folder:
     app.js - Builds the dropdowns and interacts with the ML model
