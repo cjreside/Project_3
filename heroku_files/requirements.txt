@@ -1,0 +1,14 @@
+flask
+gunicorn
+whitenoise
+bson
+flask_pymongo
+flask_cors
+dnspython
+requests
+sqlalchemy
+psycopg2
+numpy==1.18.5
+pandas
+tensorflow
+keras
