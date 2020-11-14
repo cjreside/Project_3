@@ -43,26 +43,26 @@ static folder:
 
 weekly_nfl folder:
   
-  Jupyter notebook and data used to build visualizations and the API
+    Jupyter notebook and data used to build visualizations and the API
   
-  Loads cleaned data to a postgres database
+    Loads cleaned data to a postgres database
 
 app.py
   
-  Flask app
+    Flask app
   
-  Builds the home route (/)
+    Builds the home route (/)
+
+    Builds the visualization route (/visualizations)
   
-  Builds the visualization route (/visualizations)
+    Builds the prediciton route, to test against the ML model (/predict)
   
-  Builds the prediciton route, to test against the ML model (/predict)
-  
-  Builds the API route (/data)
+    Builds the API route (/data)
 
 russell_deep_trained_790.h5
   
-  ML model
+    ML model
 
 heroku_files:
   
-  All of the same files, but rebuilt to Heroku's app standards
+    All of the same files, but rebuilt to Heroku's app standards
