@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script defer src="https://use.fontawesome.com/releases/v5.12.0/js/all.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What Should Russell Do?</title>
+      
+      <!-- d3 JavaScript -->
+      <script src="https://d3js.org/d3.v4.min.js"></script>
+
+      <!-- Our CSS -->
+      <link rel="stylesheet" type="text/css" href="style/style.css">
+      <link rel="stylesheet" type="text/css" href="style/bootstrap.min.css">
+      <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      
+      <link rel="icon" type="image/png" href="./favicon.ico">
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container">  
+        <a class="navbar-brand">What Should Russell Wilson Do?</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto">    
+            <li class="nav-item">
+              <a class="nav-link" href="#sec1">MACHINE LEARNING</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./visualizations">ADDITIONAL VISUALIZATIONS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./data">API</a>
+            </li>
+          </ul>
+        </div>   
+      </div>
+    </nav>
+    
+    <header class="hero text-center" id="video_cover">
+      <div id="container">
+        <video id="background_video" loop muted></video>
+      </div>
+    </header>
+    
+    <div class="container content-wrapper">
+      <div class="row">
+        <h4 class="header" id="sec1">Machine Learning Model</h4>
+      </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-primary">
+              <div id='options-container'></div>
+            </div>
+            <select id="sel_quarter" onchange="quarter_value(this)">
+              <option value="">-- Select Quarter --</option>
+            </select>
+            <select id="sel_down" onchange="down_value(this)">
+              <option value="">-- Select Down --</option>
+            </select>
+            <select id="sel_defenders" onchange="defenders_value(this)">
+              <option value="">-- Select # of Defenders in Box --</option>
+            </select>
+            <select id="sel_passrushers" onchange="passrushers_value(this)">
+              <option value="">-- Select # of Pass Rushers --</option>
+            </select>
+            <select id="sel_playdirection" onchange="playdirection_value(this)">
+              <option value="">-- Select Play Direction --</option>
+            </select>
+            <select id="sel_route" onchange="route_value(this)">
+              <option value="">-- Select Route Type --</option>
+            </select>
+            <select id="sel_offense" onchange="offense_value(this)">
+              <option value="">-- Select Offense Formation --</option>
+            </select>
+            <select id="sel_dropback" onchange="dropback_value(this)">
+              <option value="">-- Select Dropback Type --</option>
+            </select>
+            <button id="random-btn" type="button" class="btn btn-default">Randomize</button>
+            <button id="filter-btn" type="button" class="btn btn-default">Make a prediction</button>
+          </div>
+          
+          <div class="col-md-6">
+            <img id="img" src="#">
+          </div>
+        </div>
+    </div>    
+    <br><br><br><br><br>       
+        
+    <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.6/highlight.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- MomentJS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+        
+    <!-- D3 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js"></script>
+
+    <!-- Our JavaScript -->
+    <script src="js/bideo.js"></script>
+    <script src="js/app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.5.2/dist/tf.min.js"></script>
+
+  </body>
+</html>
