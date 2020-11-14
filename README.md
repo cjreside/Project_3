@@ -11,14 +11,22 @@ Description
 
 ## Files in this repository:
 static folder:
+  
   js folder:
+    
     app.js - Builds the dropdowns and interacts with the ML model
+    
     bideo.js - Builds the Russell bobblehead video background
+    
     logic.js - Builds the graph visualization
 
+  
   style folder:
+    
     Russell_bobblehead.gif - Used as background
+    
     bootstrap.min.css - Bootstrap style
+    
     style.css - CSS styles
 
   templates folder:
