@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+  font-family: Ubuntu, sans-serif;
+}
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.navbar-brand {
+  font-size: 30px !important;
+}
+
+/* The wrapper contains all of the page's content besides the footer, which is pushed to the bottom of the page */
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 130px;
+  overflow: auto;
+}
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #3e8e41;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  min-width: 230px;
+  overflow: auto;
+  border: 1px solid #ddd;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+/* The footer is positioned at the bottom of the page */
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 100px;
+  background: #6d7985;
+}
+#footer a {
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  margin: 10px;
+  font-size: 12px;
+}
+/* The code styles the text at the bottom of the footer */
+.footer > .bottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 5px;
+  background: #c7dbf0;
+
+}
+
+/* Adding styles to the aside and filter form */
+.ufo-form {
+  margin-top: 50px;
+}
+
+.filters .panel-body {
+  padding: 0;
+}
+
+.filters {
+  margin-top: 10px;
+}
+
+select {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  color: #8e979f;
+  outline: none;
+}
+
+#table-area th {
+  text-align: center;
+}
+
+#table-area th:first-child,
+#table-area th:nth-child(2),
+#table-area th:nth-child(6) {
+  min-width: 70px;
+}
+
+.loader {
+  margin-top: 50px;
+}
+
+.margin-top-50 {
+  margin-top: 50px;
+}
+
+   
+/* The styles for the parallax */
+.hero {
+  position: relative;
+  height: 20px;
+  padding: 20px;
+  margin: 0;
+  background: whitesmoke;
+  /*background-image: url("NYC_background3.jpg");*/
+  background-attachment: fixed;
+  background-position: bottom center;
+  background-size: cover;
+}
+.navbar {
+  padding: 5px;
+  margin: 10;
+}
+
+.hero h1 {
+  margin-top: 20px;
+  font-size: 2rem;
+}
+
+.hero p {
+  font-size: 1 rem;
+ }
+
+ #background_video {
+  position: absolute;
+
+  top: 0%; left: 0%;
+  transform: translate(0%, 0%);
+
+  object-fit: fill;
+  height: 100%; width: 100%;
+}
+
+#video_cover {
+  
+
+  width: 100%; height: 100%;
+
+ background: url('Russell_bobblehead.gif') no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: bottom center;
+}
+
+body {
+  font: 10px sans-serif;
+}
+select {
+  display: block;
+}
+.bar {
+  fill: purple;
+  opacity: 0.8;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
