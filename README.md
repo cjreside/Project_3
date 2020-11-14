@@ -85,6 +85,8 @@ heroku_files:
       numpy
       flask
       tensorflow
+        keras
+      sqlalchemy
     javascript
       d3
     html
