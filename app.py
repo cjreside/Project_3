@@ -84,7 +84,7 @@ def games():
         games_dict["scramble"] = scramble
         games_dict["scramble_rollout_right"] = scramble_rollout_right
         games_dict["scramble_rollout_left"] = scramble_rollout_left
-        games_dict["unknwon"] = unknown
+        games_dict["unknown"] = unknown
         games_dict["i_form"] = i_form
         games_dict["empty"] = empty
         games_dict["shotgun"] = shotgun
