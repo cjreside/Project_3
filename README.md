@@ -40,17 +40,17 @@ static folder:
     
     style.css - CSS styles
 
-  templates folder:
-    
-    favicon.ico - Russell favicon
-    
-    index.html - Page loaded at /
-    
-    visualizations.html - Page loaded at /visualizations
-
   videos folder:
     
     All of the .gifs
+    
+  templates folder:
+
+    favicon.ico - Russell favicon
+
+    index.html - Page loaded at /
+
+    visualizations.html - Page loaded at /visualizations
 
 weekly_nfl folder:
   
