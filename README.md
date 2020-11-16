@@ -21,9 +21,8 @@ https://russell-wilson-predictor.herokuapp.com/
   https://colab.research.google.com/drive/1mBA_vjN-HK3LD_jCPpkZSNtYUCI-vXJ4#scrollTo=rJ__YTNwtn9F
 
 ## Files in this repository:
-static folder:
   
-  js folder:
+  static/js folder:
     
     app.js - Builds the dropdowns and interacts with the ML model
     
@@ -32,7 +31,7 @@ static folder:
     logic.js - Builds the graph visualization
 
   
-  style folder:
+  static/style folder:
     
     Russell_bobblehead.gif - Used as background
     
@@ -40,11 +39,11 @@ static folder:
     
     style.css - CSS styles
 
-  videos folder:
+  static/videos folder:
     
     All of the .gifs
     
-  templates folder:
+templates folder:
 
     favicon.ico - Russell favicon
 
@@ -52,7 +51,7 @@ static folder:
 
     visualizations.html - Page loaded at /visualizations
 
-weekly_nfl folder:
+ weekly_nfl folder:
   
     Jupyter notebook and data used to build visualizations and the API
   
